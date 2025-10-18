@@ -39,10 +39,9 @@ axs[0].grid(True)
 
 
 
-box_data = [tup[0]["avg"].dropna().values for tup in pd_files]
+box_data = [tup[0]["avg"].values for tup in pd_files]
 box_labels = [tup[1] for tup in pd_files]
 
-axs[1].clear()
 bp = axs[1].boxplot(
     box_data,
     labels=box_labels,
@@ -57,7 +56,6 @@ bp = axs[1].boxplot(
 )
 
 axs[1].set_ylabel("Odsetek wygranych gier")
-axs[1].tick_params(axis='x', rotation=25)
 
 plt.tight_layout()
 plt.show()
